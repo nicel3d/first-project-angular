@@ -1,6 +1,10 @@
 <div class="card text-left">
   <div class="card-body">
-    <h4 class="card-title">{{ productId }}</h4>
-    <p class="card-text">Body</p>
+    <ng-container *ngIf="product;else nonElement">
+      <h4 class="card-title">{{ product.title }}</h4>
+      <p class="card-text">{{ product.description }}</p>
+      <div class="text-right">{{ product.price }}</div>
+    </ng-container>
+    <ng-template #nonElement>Нету</ng-template>
   </div>
 </div>
