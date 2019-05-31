@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col" *ngFor="let item of items">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">{{ item.title }}</h3>
+        <p class="card-text">{{ item.content }}</p>
+      </div>
+      <div class="card-footer text-right">
+        <button type="button" name="" id="" (click)="onClick(item)" class="btn btn-primary btn-lg">
+          Клик
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
