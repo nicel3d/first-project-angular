@@ -7,7 +7,8 @@
         <div class="text-right">{{ product.price }}</div>
       </div>
       <div class="card-footer text-right">
-        <button type="button" class="btn btn-primary" (click)="onAlertOpen(product)">Ок</button>
+<!--        <a class="btn btn-primary" [routerLink]="['/products', product.id]" role="button">Детали</a>-->
+        <button type="button" class="btn btn-secondary" (click)="onDetails(product)">Детали</button>
         <app-product-alerts [product]="product" (notify)="onNotify(product)"></app-product-alerts>
       </div>
     </div>

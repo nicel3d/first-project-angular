@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +10,7 @@ export class ProductListComponent implements OnInit {
   public products: Product[];
   public product: Product;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -17,6 +18,7 @@ export class ProductListComponent implements OnInit {
     Array.from(new Array(10)).forEach((x, index) => {
       const newIndex = index + 1;
       this.products.push(new Product({
+        id: index,
         title: `Продукт № ${newIndex}`,
         description: `Продукт № ${newIndex}`,
         price: newIndex * 100
@@ -28,18 +30,20 @@ export class ProductListComponent implements OnInit {
     window.alert(`You will be notified when the product goes on sale ${product.title}`);
   }
 
-  onAlertOpen(product: Product) {
+  onDetails(product: Product) {
     this.product = product;
-    console.log(product.title);
+    this.router.navigate(['/products', product.id]).then();
   }
 }
 
 export class Product implements IProduct {
+  public id?: number;
   public title: string;
   public description: string;
   public price: number;
 
   constructor(data?: IProduct) {
+    this.id = data.id;
     this.title = data.title;
     this.description = data.description;
     this.price = data.price;
@@ -47,6 +51,7 @@ export class Product implements IProduct {
 }
 
 export interface IProduct {
+  id?: number;
   title: string;
   description: string;
   price: number;

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductAlertsComponent } from './components/product-alerts/product-alerts.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardItemComponent,
     ProductListComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
