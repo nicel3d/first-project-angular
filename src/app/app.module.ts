@@ -7,6 +7,8 @@ import { CardItemComponent } from './components/card-item/card-item.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductAlertsComponent } from './components/product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     CardItemComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

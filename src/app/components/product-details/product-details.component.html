@@ -2,7 +2,10 @@
   <div class="card-body">
     <ng-container *ngIf="product;else nonElement">
       <h4 class="card-title">{{ product.title }}</h4>
-      <p class="card-text">{{ product.description }}</p>
+      <p class="card-text">
+        <label for="description" id="description-label"></label>
+        <textarea [(ngModel)]="product.description" id="description" cols="30" rows="10"></textarea>
+      </p>
       <div class="text-right">{{ product.price }}</div>
     </ng-container>
     <ng-template #nonElement>Нету</ng-template>

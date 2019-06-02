@@ -11,10 +11,16 @@ export class ProductService {
 
   addProduct(product: Product) {
     if (Array.isArray(this.products)) {
+      product.id = this.products[this.products.length - 1].id + 1;
       this.products.push(product);
     } else {
+      product.id = 1;
       this.products = new Array<Product>(product);
     }
+  }
+
+  get(id: number) {
+    return this.products.find(x => x.id === id) || null;
   }
 
   deleteProduct(id: number) {

@@ -1,0 +1,54 @@
+<div class="card text-left">
+  <div class="card-body">
+    <h4 class="card-title"></h4>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="card-text">
+        <div class="form-group">
+          <label for="title" id="title-label">Заголовок</label>
+          <input type="text" id="title" class="form-control"
+                 [class.is-invalid]="title"
+                 required
+                 formControlName="title" aria-describedby="helpId" placeholder="">
+
+          <div *ngIf="title"
+               tabindex="0"
+               class="valid-feedback d-block text-danger" role="alert" aria-describedby="title-label">
+            ошибка
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description" id="description-label">Описание</label>
+          <textarea type="text" id="description" class="form-control"
+                    [class.is-invalid]="description"
+                    required
+                    formControlName="description" aria-describedby="helpId" placeholder="">
+          </textarea>
+
+          <div *ngIf="description"
+               tabindex="0"
+               class="valid-feedback d-block text-danger" role="alert" aria-describedby="description-label">
+            ошибка
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="price" id="price-label">Цена</label>
+          <input type="number" id="price" class="form-control"
+                 [class.is-invalid]="price"
+                 required
+                 formControlName="price" aria-describedby="helpId" placeholder="">
+
+          <div *ngIf="price"
+               tabindex="0"
+               class="valid-feedback d-block text-danger" role="alert" aria-describedby="price-label">
+            ошибка
+          </div>
+        </div>
+      </div>
+      <div class=" card-footer text-right">
+        <button type="submit" class="btn btn-primary" [class.disabled]="!checkoutForm.valid">
+          Добавить
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
