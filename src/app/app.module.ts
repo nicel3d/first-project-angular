@@ -10,6 +10,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+require('../templates/structural/Adapter'); // проверка GoF
+
 @NgModule({
   declarations: [
     AppComponent,
