@@ -7,7 +7,6 @@ import { IAbstractFactory } from './IAbstractFactory';
 import { ConcreteFactory1 } from './factories/ConcreteFactory1';
 import { ConcreteFactory2 } from './factories/ConcreteFactory2';
 
-// @ts-ignore duplicate
 function clientCode(factory: IAbstractFactory) {
   const productA = factory.createProductA();
   const productB = factory.createProductB();

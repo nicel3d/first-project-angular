@@ -5,8 +5,8 @@ import { Target } from './Target';
 import { Adaptee } from './Adaptee';
 import { Adapter } from './Adapter';
 
-function clientCode(target: Target) {
-  console.log(target.request());
+function clientCode(target1: Target) {
+  console.log(target1.request());
 }
 
 console.log('Client: I can work just fine with the Target objects:');
@@ -21,6 +21,6 @@ console.log(`Adaptee: ${Adaptee.specificRequest()}`);
 
 console.log('');
 
-console.log('Client: But I can work with it via the Adapter:');
+console.log('Client: But I can work with it via the adapter:');
 const index = new Adapter(adaptee);
 clientCode(index);
