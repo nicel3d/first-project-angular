@@ -9,6 +9,9 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TestDirectiveComponent } from './components/test-directive/test-directive.component';
+import { HighlightDirective } from './utils/directives/highlight.directive';
+import { CapitalizeDirective } from './utils/directives/capitalize.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    TestDirectiveComponent,
+    HighlightDirective,
+    CapitalizeDirective
   ],
   imports: [
     BrowserModule,
