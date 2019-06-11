@@ -22,4 +22,8 @@ describe('CardItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('количество элементов должно быть равно 2', () => {
+    expect(component.items.length).toEqual(2);
+  });
 });
